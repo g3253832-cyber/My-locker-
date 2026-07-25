@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private Gallery</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#111;
+color:white;
+text-align:center;
+}
+
+.login{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+input{
+padding:12px;
+width:250px;
+border:none;
+border-radius:10px;
+margin-top:10px;
+font-size:16px;
+}
+
+button{
+margin-top:15px;
+padding:12px 25px;
+border:none;
+border-radius:10px;
+background:#ff0066;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+#gallery{
+display:none;
+padding:20px;
+}
+
+h1{
+margin-bottom:20px;
+}
+
+img,video{
+width:300px;
+max-width:90%;
+border-radius:15px;
+margin:15px;
+box-shadow:0 0 15px #000;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login" id="login">
+
+<h2>🔒 Private Gallery</h2>
+
+<input
+type="password"
+id="pass"
+placeholder="Password">
+
+<button onclick="login()">
+Enter
+</button>
+
+<p id="msg" style="color:red;margin-top:15px;"></p>
+
+</div>
+
+<div id="gallery">
+
+<h1>❤️ Welcome ❤️</h1>
+
+<h2>Pictures</h2>
+
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+
+<h2>Videos</h2>
+
+<video controls>
+<source src="video1.mp4" type="video/mp4">
+</video>
+
+<video controls>
+<source src="video2.mp4" type="video/mp4">
+</video>
+
+</div>
+
+<script>
+
+function login(){
+
+let p=document.getElementById("pass").value;
+
+if(p==="282010"){
+
+document.getElementById("login").style.display="none";
+
+document.getElementById("gallery").style.display="block";
+
+}else{
+
+document.getElementById("msg").innerHTML="❌ Wrong Password";
+
+}
+
+}
+
+</script>
+
+</body>
+  </html>
